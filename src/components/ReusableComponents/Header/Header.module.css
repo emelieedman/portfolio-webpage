@@ -1,9 +1,8 @@
 .container {
+  font-family: specialElite;
   color: white;
-  justify-self: center;
-  align-self: center;
-  text-align: center;
   cursor: pointer;
+  text-align: center;
 }
 
 .name {
