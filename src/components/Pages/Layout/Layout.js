@@ -4,6 +4,7 @@ import { AnimatePresence, motion, transform, useCycle } from 'framer-motion';
 import styles from './Layout.module.css';
 import Header from '../../ReusableComponents/Header/Header';
 import ProfileImg from '../../ReusableComponents/ProfileImg/ProfileImg';
+import MobileMockUp from '../../ReusableComponents/MobileMockUp/MobileMockUp';
 
 const Layout = () => {
   const [animate, cycle] = useCycle(
@@ -12,10 +13,15 @@ const Layout = () => {
   );
 
   const [isHeaderClicked, setIsHeaderClicked] = useState(false);
+  const [isProjectsClicked, setIsProjectsClicked] = useState(false);
 
-  const toggle = () => {
+  const toggleHeader = () => {
     setIsHeaderClicked(!isHeaderClicked);
-    console.log(isHeaderClicked);
+    setIsProjectsClicked(false);
+  };
+
+  const onViewProjects = () => {
+    setIsProjectsClicked(!isProjectsClicked);
   };
 
   return (
@@ -25,11 +31,14 @@ const Layout = () => {
         animate={animate}
         onTap={() => {
           cycle();
-          toggle();
+          toggleHeader();
         }}
-        transition={{ duration: 1, type: 'spring', stiffness: 90 }}
+        transition={{ duration: 1, type: 'spring', stiffness: 50 }}
       >
-        <Header />
+        <Header
+          title={'Emelie Edman'}
+          subtitle={'Front End Developer & Digital Designer'}
+        />
       </motion.div>
       {isHeaderClicked && (
         <motion.div
@@ -37,13 +46,33 @@ const Layout = () => {
           initial={{ x: '-30vw', y: '-100vh' }}
           animate={{ x: '-30vw', y: '-40vh' }}
           transition={{
-            delay: 0.3,
+            delay: 0.4,
             duration: 0.2,
             type: 'spring',
             stiffness: 100,
           }}
         >
           <ProfileImg />
+        </motion.div>
+      )}
+      {isHeaderClicked && (
+        <motion.div
+          className={styles.projects}
+          onClick={() => onViewProjects()}
+          initial={{ y: '30vh', x: '-10vw' }}
+          animate={{ y: '-5vh', x: '-10vw' }}
+          transition={{
+            delay: 0.7,
+            type: 'spring',
+            stiffness: 80,
+          }}
+        >
+          <Header title={'Projects'} />
+        </motion.div>
+      )}
+      {isProjectsClicked && (
+        <motion.div>
+          <MobileMockUp />
         </motion.div>
       )}
     </>

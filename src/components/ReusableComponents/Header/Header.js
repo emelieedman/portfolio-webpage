@@ -1,14 +1,11 @@
 import React from 'react';
 import styles from './Header.module.css';
 
-const Header = () => {
-  const name = 'Emelie Edman';
-  const profession = 'Front End Developer & Digital Designer';
-
+const Header = ({ title, subtitle }) => {
   return (
     <div to="home-page" className={styles.container}>
-      <h1 className={styles.name}>{name}</h1>
-      <h2 className={styles.profession}>{profession}</h2>
+      <h1 className={styles.title}>{title}</h1>
+      {subtitle && <h2 className={styles.subtitle}>{subtitle}</h2>}
     </div>
   );
 };

@@ -5,12 +5,12 @@
   text-align: center;
 }
 
-.name {
+.title {
   margin: 0;
   font-size: 96px;
 }
 
-.profession {
+.subtitle {
   margin: 0;
   font-size: 24px;
 }
