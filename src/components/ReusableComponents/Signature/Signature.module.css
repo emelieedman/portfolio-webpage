@@ -1,0 +1,14 @@
+.container {
+  font-family: specialElite;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+
+.svg {
+  stroke-width: 3;
+}
+
+.subtitle {
+  font-size: 1.6vw;
+}

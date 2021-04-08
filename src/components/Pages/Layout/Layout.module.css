@@ -17,3 +17,21 @@
   left: 30%;
   transform: translate(-50%, -50%);
 }
+
+.mobileMockUp {
+  position: absolute;
+  stroke-width: 2.5;
+  transform: translate(-50%, -50%);
+}
+#child1 {
+  top: 39%;
+  left: 30%;
+}
+#child2 {
+  top: 50%;
+  left: 49%;
+}
+#child3 {
+  top: 34%;
+  left: 68%;
+}
