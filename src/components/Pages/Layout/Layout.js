@@ -70,7 +70,7 @@ const Layout = () => {
     { scale: 1.25, rotate: 90, x: '-40vw' }
   );
   const [animateProject, cycleProject] = useCycle(
-    { scale: 0.5, y: '-88vh', x: '50vw' },
+    { scale: 0.3, y: '-88vh', x: '50vw' },
     { y: '-5vh', x: '-10vw' }
   );
 

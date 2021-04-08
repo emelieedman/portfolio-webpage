@@ -1,13 +1,13 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import StartPage from './components/Pages/StartPage/StartPage';
-import HomePage from './components/Pages/HomePage/HomePage';
+import CustomCursor from './components/ReusableComponents/CustomCursor/CustomCursor';
 import Layout from './components/Pages/Layout/Layout';
 
 function App() {
   return (
     <>
       <div className="container">
+        <CustomCursor />
         <Router>
           <Switch>
             <Route exact path="/" component={() => <Layout />}></Route>
