@@ -1,14 +1,13 @@
-@font-face {
-  src: url(./fonts/SpecialElite.ttf);
-  font-family: specialElite;
-}
-
-body {
-  background-color: #1c1c1c;
-}
-
 .container {
   display: grid;
-  grid-template-rows: 98vh;
   grid-template-columns: 100vw;
+  min-height: 97vh;
+}
+
+.backgroundImg {
+  background-image: url(./assets/black-room-low-light.png);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
 }

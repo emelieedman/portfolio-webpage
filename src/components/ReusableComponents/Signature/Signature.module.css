@@ -3,11 +3,12 @@
   color: white;
   text-align: center;
 }
-
 .svg {
+  box-sizing: border-box;
   stroke-width: 3;
 }
 
 .subtitle {
   font-size: 1.6vw;
+  font-family: 'Overpass Mono', monospace;
 }

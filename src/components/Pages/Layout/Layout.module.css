@@ -1,44 +1,5 @@
-.header {
-  justify-self: center;
+.center {
   align-self: center;
-  text-decoration: none;
-}
-
-.profileImg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.projects {
-  position: absolute;
-  scale: 0.3;
-  top: 2vh;
-  left: 85vw;
-  transform: translate(-50%, -50%);
-}
-
-.mobileMockUp {
-  position: absolute;
-  stroke-width: 2.5;
-  transform: translate(-50%, -50%);
-}
-
-.img {
-  position: absolute;
-  left: 250px;
-}
-
-#child1 {
-  top: 39%;
-  left: 30%;
-}
-#child2 {
-  top: 50%;
-  left: 49%;
-}
-#child3 {
-  top: 34%;
-  left: 68%;
+  justify-self: center;
+  font-family: 'Overpass Mono', monospace;
 }
