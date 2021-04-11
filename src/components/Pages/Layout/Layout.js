@@ -7,6 +7,7 @@ import Signature from '../../ReusableComponents/Signature/Signature';
 import Header from '../../ReusableComponents/Header/Header';
 import ProfileImg from '../../ReusableComponents/ProfileImg/ProfileImg';
 import MobileMockUp from '../../ReusableComponents/MobileMockUp/MobileMockUp';
+import img from '../../../gym.png';
 
 const staggerChildrenVariants = {
   hidden: { opacity: 0 },
@@ -61,6 +62,13 @@ const mobileDevice = (
       stroke-linecap="round"
       variants={item}
     />
+    <motion.image
+      href={img}
+      x="31px"
+      y="55px"
+      width="250px"
+      variants={staggerChildrenVariants}
+    />
   </motion.svg>
 );
 
@@ -68,10 +76,6 @@ const Layout = () => {
   const [animate, cycle] = useCycle(
     { scale: 1, rotate: 0 },
     { scale: 1.25, rotate: 90, x: '-40vw' }
-  );
-  const [animateProject, cycleProject] = useCycle(
-    { scale: 0.3, y: '-88vh', x: '50vw' },
-    { y: '-5vh', x: '-10vw' }
   );
 
   const [isHeaderClicked, setIsHeaderClicked] = useState(false);
@@ -83,7 +87,7 @@ const Layout = () => {
   };
 
   const onViewProjects = () => {
-    setIsProjectsClicked(!isProjectsClicked);
+    setIsProjectsClicked(true);
   };
 
   return (
@@ -93,7 +97,6 @@ const Layout = () => {
         animate={animate}
         onTap={() => {
           cycle();
-          cycleProject();
           toggleHeader();
         }}
         transition={{ duration: 1, type: 'spring', stiffness: 50 }}
@@ -119,12 +122,6 @@ const Layout = () => {
         <motion.div
           className={styles.projects}
           onClick={() => onViewProjects()}
-          animate={animateProject}
-          onTap={() => {
-            cycleProject();
-          }}
-          transition={{ duration: 0.8, type: 'tween', ease: 'easeInOut' }}
-          initial={{ y: '30vh', x: '-10vw' }}
         >
           <Header title={'Projects'} />
         </motion.div>
