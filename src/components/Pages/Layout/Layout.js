@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 //scroll behaviour
 import { useInView } from 'react-intersection-observer';
@@ -9,12 +9,35 @@ import Signature from '../../ReusableComponents/Signature/Signature';
 const Layout = () => {
   const animation = useAnimation();
   const [contentRef, inView] = useInView({
-    rootMargin: '-300px',
+    rootMargin: '-50px',
   });
+
+  useEffect(() => {
+    if (inView) {
+      animation.start('visible');
+    }
+  }, [animation, inView]);
+
   return (
-    <div className={styles.center}>
+    <motion.div
+      className={styles.signature}
+      ref={contentRef}
+      animate={animation}
+      initial="hidden"
+      variants={{
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 7, ease: [0.6, 0.05, -0.01, 0.9] },
+        },
+        hidden: {
+          opacity: 0,
+          y: 72,
+        },
+      }}
+    >
       <Signature subtitle={'front end developer & digital designer'} />
-    </div>
+    </motion.div>
   );
 };
 
